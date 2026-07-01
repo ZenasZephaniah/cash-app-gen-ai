@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  background-color: #000;
+  min-height: 100vh;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(20px);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 20px rgba(0, 214, 50, 0.3);
+  }
+}
+
+@layer components {
+  .keypad-button {
+    @apply w-20 h-16 rounded-full flex items-center justify-center text-2xl font-light text-white transition-all duration-150 active:scale-95 active:bg-cash-card;
+  }
+
+  .nav-item {
+    @apply flex flex-col items-center gap-1 py-2 px-4 rounded-lg transition-all duration-200 active:scale-95;
+  }
+
+  .card-glass {
+    @apply bg-gradient-to-br from-cash-card to-black/80 rounded-2xl border border-cash-border/50;
+  }
+}
